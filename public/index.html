@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://app.base44.com/apps/6911b8e453ca3ac01fb134d6">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>CD Bustarviejo</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1e1e1e">
 </head>
-<body>
-  <p>Redirigiendo a CD Bustarviejo...</p>
-</body>
-</html>
+
+<body style="font-family:sans-serif; text-align:center; padding:2rem">
+
+  <h1>CD Bustarviejo</h1>
+  <p>Instala la aplicación o accede a la plataforma.</p>
+
+  <button id="installBtn" style="display:none; padding:1rem; font-size:1.1rem;">
+    Instalar app
+  </button>
+
+  <br><br>
+
+  <a
+    href="https://app.base44.com/apps/6911b8e453ca3ac01fb134d6"
+    style="font-size:1.1rem"
+  >
+    Entrar a la aplicación
+  </a>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installBtn').
+
