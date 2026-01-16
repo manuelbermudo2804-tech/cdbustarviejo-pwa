@@ -6,58 +6,31 @@
 
   <title>CD Bustarviejo</title>
 
-  <!-- Manifest PWA -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1e1e1e">
-
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 2rem;
-      background: #ffffff;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    a.button {
-      display: inline-block;
-      padding: 1rem 1.5rem;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #1e1e1e;
-      border-radius: 6px;
-    }
-
-    a.button:active {
-      opacity: 0.8;
-    }
-  </style>
 </head>
 
-<body>
+<body style="font-family:sans-serif; text-align:center; padding:2rem">
 
   <h1>CD Bustarviejo</h1>
   <p>Instala la aplicación o accede a la plataforma.</p>
 
-  <!-- 🔴 ESTE ENLACE ES LA CLAVE (ROMPE EL BUCLE) -->
-  <a
-    class="button"
-    href="https://app.base44.com/apps/6911b8e453ca3ac01fb134d6"
-    target="_blank"
-    rel="noopener"
+  <br>
+
+  <button
+    onclick="openApp()"
+    style="padding:1rem 1.5rem; font-size:1.1rem; border-radius:8px;"
   >
     Entrar a la aplicación
-  </a>
+  </button>
+
+  <script>
+    function openApp() {
+      // Fuerza apertura en navegador REAL, no dentro de la PWA
+      window.location.href =
+        "https://app.base44.com/apps/6911b8e453ca3ac01fb134d6";
+    }
+  </script>
 
 </body>
 </html>
