@@ -15,7 +15,10 @@
   <h1>CD Bustarviejo</h1>
   <p>Instala la aplicación o accede a la plataforma.</p>
 
-  <button id="installBtn" style="display:none; padding:1rem; font-size:1.1rem;">
+  <button
+    id="installBtn"
+    style="display:none; padding:1rem; font-size:1.1rem;"
+  >
     Instalar app
   </button>
 
@@ -34,5 +37,7 @@
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      document.getElementById('installBtn').
+      document.getElementById('installBtn').style.display = 'inline-block';
+    });
 
+    document.getElementById('installBtn').addEventListene
