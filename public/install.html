@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Instalar app</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1e1e1e">
+</head>
+
+<body style="font-family: sans-serif; padding: 2rem; text-align: center">
+
+  <h1>Instalar aplicación</h1>
+  <p>Pulsa el botón para instalar la app en tu dispositivo.</p>
+
+  <button id="installBtn" style="font-size: 1.2rem; padding: 1rem; display:none">
+    Instalar app
+  </button>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installBtn').style.display = 'inline-block';
+    });
+
+    document.getElementById('installBtn').addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    });
+  </script>
+
+</body>
+</html>
